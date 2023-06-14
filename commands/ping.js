@@ -44,7 +44,8 @@ module.exports = {
           { name: 'Last Updated', value: lastUpdated, inline: true }
         )
         .addField('Stock Levels', product.skus.map((sku, i) => `${sku.nikeSize} - ${product.availableSkus[i].level}`).join('\n'))
-        .addField('Links', links);
+        .addField('Links', links)
+        .setFooter('Developed by @13maxh');
 
       await interaction.reply({ embeds: [embed] });
     } catch (error) {
